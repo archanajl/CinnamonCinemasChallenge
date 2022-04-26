@@ -2,7 +2,7 @@
 
 ### <ins>Goal of the application</ins>
 
-Cinnamon Cinemas Challenge manages the booking of seats for your favorite cinema. Click [here](https://codingdojo.org/kata/Bowling/) to have more details.
+Cinnamon Cinemas Challenge manages the booking of seats for your favorite cinema. 
 
 ### <ins>Cinnamon Cinemas Business Requirements</ins>
 

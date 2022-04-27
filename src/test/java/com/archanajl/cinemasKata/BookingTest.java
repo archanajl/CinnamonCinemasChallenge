@@ -41,4 +41,20 @@ public class BookingTest {
 
     }
 
+    @Test
+    public void checkAllocatedSeatsMoreThanThree(){
+        String strAllocated = booking.allocateSeats(5);
+        Assertions.assertEquals("",strAllocated);
+    }
+
+    @Test
+    public void checkgetSeatingPlanAfterAllocatingMoreThanThree(){
+
+        String strAllocated = booking.allocateSeats(5);
+        String actual = booking.getSeatingPlan();
+        String expected = "A0 A1 A2 A3 A4 \n -  -  -  -  - \nB0 B1 B2 B3 B4 \n -  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";
+        Assertions.assertEquals( expected,actual);
+
+    }
+
 }

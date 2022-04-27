@@ -10,12 +10,12 @@ public class Seating {
     private int numRow ;
     private int numColumn;
 
-    public Seating(int rows,int seats){
-        this.numRow = rows;
-        this.numColumn = seats;
-        this.seating = new int[rows][seats];
+    public Seating(int[][] seats){
+        this.numRow = seats.length;
+        this.numColumn = seats[0].length;
+        this.seating = seats;
         this.setEmptySeating();
-        this.availableSeats = rows * seats;
+        this.availableSeats = numRow * numColumn;
         this.filledSeats =0;
     }
 
@@ -28,7 +28,11 @@ public class Seating {
         return seating;
     }
 
-    public String allocateSeats(int numSeats){
+    public void setSeating(int[][] seating) {
+        this.seating = seating;
+    }
+
+    public String allocateSeats(int numSeats, int[][] seats){
         int rowIndex = 0;
         int columnIndex = 0;
         String seatsAllocated ="";
@@ -37,7 +41,7 @@ public class Seating {
             rowIndex = this.filledSeats / numRow ;
             columnIndex = this.filledSeats % numColumn ;
             for (int i=0; i<= numSeats-1; i++){
-                this.seating[rowIndex][columnIndex] = 1;
+                seats[rowIndex][columnIndex] = 1;
                 seatsAllocated += sN.assignSeatNumber(rowIndex,columnIndex) + ",";
                 this.availableSeats--;
                 this.filledSeats++;
@@ -48,6 +52,7 @@ public class Seating {
                 else columnIndex++;
             }
         }
+        setSeating(seats);
         return seatsAllocated;
     }
 

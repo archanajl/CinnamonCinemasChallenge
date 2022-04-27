@@ -2,6 +2,7 @@ package com.archanajl.cinemasKata;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class BookingTest {
@@ -21,7 +22,8 @@ public class BookingTest {
 
     @Test
     public void checkisSeatsAvailable(){
-        Seating seatPlan = new Seating(3,5);
+        int[][] seats = new int[3][5];
+        Seating seatPlan = new Seating(seats);
         Assertions.assertTrue(seatPlan.isSeatsAvailable(2));
     }
 
@@ -61,6 +63,17 @@ public class BookingTest {
     public void checkgetSeatingPlanAfterAllocatingTwoTimes(){
 
         String strAllocated1 = booking.allocateSeats(2);
+        String strAllocated2 = booking.allocateSeats(3);
+        String actual = booking.getSeatingPlan();
+        String expected = "A0 A1 A2 A3 A4 \n B  B  B  B  B \nB0 B1 B2 B3 B4 \n -  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";
+        Assertions.assertEquals( expected,actual);
+
+    }
+
+    @Test
+    public void checkgetSeatingPlanAfterAllocatingTwoTimesNextRow(){
+
+        String strAllocated1 = booking.allocateSeats(3);
         String strAllocated2 = booking.allocateSeats(3);
         String actual = booking.getSeatingPlan();
         String expected = "A0 A1 A2 A3 A4 \n B  B  B  B  B \nB0 B1 B2 B3 B4 \n -  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";

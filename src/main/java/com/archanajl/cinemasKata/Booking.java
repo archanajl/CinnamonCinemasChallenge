@@ -35,7 +35,8 @@ public class Booking {
     }
 
     public String allocateSeats(int numSeats){
-        if (numSeats < 3) {
+
+        if (numSeats <= 3) {
             String AllocatedSeats = cinema.allocateSeats(numSeats);
             if (AllocatedSeats != "") {
                 AllocatedSeats = AllocatedSeats.substring(0, AllocatedSeats.length() - 1);

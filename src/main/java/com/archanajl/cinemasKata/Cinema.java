@@ -3,13 +3,15 @@ package com.archanajl.cinemasKata;
 public class Cinema {
 
     private int rows;
-    private int seats;
+    private int columns;
     private Seating seating;
+    private int[][] seatingPlan;
 
-    public Cinema(int rows, int seats){
+    public Cinema(int rows, int columns){
         this.rows = rows;
-        this.seats = seats;
-        this.seating = new Seating(rows,seats);
+        this.columns = columns;
+        this.seatingPlan = new int[rows][columns];
+        this.seating = new Seating(seatingPlan);
     }
 
     public int[][] getSeating() {
@@ -17,7 +19,7 @@ public class Cinema {
     }
 
     public String allocateSeats(int numSeats){
-        return this.seating.allocateSeats(numSeats);
+        return seating.allocateSeats(numSeats, getSeating());
     }
 
 }

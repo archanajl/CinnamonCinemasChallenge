@@ -5,11 +5,12 @@ public class SeatNumber {
     private String seatNumber ;
     String[] rowName = {"A","B","C"};
 
-    public SeatNumber(int row, int column){
-        this.seatNumber = rowName[row] + column;
+    public SeatNumber(){
+
     }
 
-    public String getSeatNumber() {
+    public String getSeatNumber(int row, int column) {
+        this.seatNumber = rowName[row] + column;
         return seatNumber;
     }
 

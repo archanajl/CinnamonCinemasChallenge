@@ -13,6 +13,22 @@ public class Booking {
     }
 
     public String getSeatingPlan(){
-        return "";
+        StringBuilder seatingPlan = new StringBuilder();
+        SeatNumber sN = new SeatNumber();
+        for (int i=0; i<= seats.length -1; i++){
+            for (int j=0; j<= seats[i].length -1;j++){
+                    seatingPlan.append(sN.getSeatNumber(i,j) + " " );
+            }
+            seatingPlan.append(System.lineSeparator());
+            for (int j=0; j<= seats[i].length-1;j++){
+                if (seats[i][j] != 0){
+                    seatingPlan.append(" B " );
+                }else{
+                    seatingPlan.append(" - " );
+                }
+            }
+            seatingPlan.append(System.lineSeparator());
+        }
+        return seatingPlan.toString();
     }
 }

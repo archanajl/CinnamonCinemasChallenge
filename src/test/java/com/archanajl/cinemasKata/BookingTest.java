@@ -44,7 +44,7 @@ public class BookingTest {
     @Test
     public void checkAllocatedSeatsMoreThanThree(){
         String strAllocated = booking.allocateSeats(5);
-        Assertions.assertEquals("",strAllocated);
+        Assertions.assertEquals("Please enter valid number of seats(1,2 0r 3)",strAllocated);
     }
 
     @Test

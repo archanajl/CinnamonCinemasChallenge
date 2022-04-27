@@ -35,11 +35,14 @@ public class Booking {
     }
 
     public String allocateSeats(int numSeats){
-        String AllocatedSeats = cinema.allocateSeats(numSeats);
-        if (AllocatedSeats != ""){
-            AllocatedSeats = AllocatedSeats.substring(0,AllocatedSeats.length()-1);
-        }
-        return AllocatedSeats;
+        if (numSeats < 3) {
+            String AllocatedSeats = cinema.allocateSeats(numSeats);
+            if (AllocatedSeats != "") {
+                AllocatedSeats = AllocatedSeats.substring(0, AllocatedSeats.length() - 1);
+            }
+            return AllocatedSeats;
+        }else
+            return "Please enter valid number of seats(1,2 0r 3)";
     }
 
 }

@@ -40,8 +40,59 @@ The application allocates the seats from 1 to 3 in an ordered fashion until all 
 - Step One:
 
 As it is a TDD based application, I started off by writing a basic structure. Written a test case to return a string 
-to display the seating.
+to display the seating.Tests written and checked to pass(RED -> GREEN).
 
+- Step Two:
+  
+Display the seating plan. Right now it will display everything as empty as the logic has not yet implemented. It is shown
+as below:
+A1 A2 A3 A4 A5
+ -  -  -  -  - 
+B1 B2 B3 B4 B5
+ -  -  -  -  - 
+C1 C2 C3 C4 C5
+ -  -  -  -  - 
+
+Tests written and checked to pass(RED -> GREEN).
+
+- Step Three:
+
+Check whether there are seats to be allocated. Tests written and checked to pass(RED -> GREEN).
+
+- Step Four:
+
+Validate the number of seats to be allocated. - should be 1, 2 or 3. Tests written and checked to pass(RED -> GREEN).
+
+- Step Five:
+
+Method to allocate the seats. Tests written and checked to pass(RED -> GREEN). 
+For example, if we allocate three seats, it is displayed as:
+
+A1 A2 A3 A4 A5
+ B  B  B  -  - 
+B1 B2 B3 B4 B5
+ -  -  -  -  - 
+C1 C2 C3 C4 C5
+ -  -  -  -  - 
+
+
+- Step Six:
+
+Stop allocating once all the tickets are booked. Tests written and checked to pass(RED -> GREEN)
+
+- Step Seven:
+  
+Display the seating plan after allocating and check whether it is done properly.
+
+### <ins> To improve </ins>
+
+- Try to include parameterized tests.
+  
+- Include the console display to get the input from the user and modify the seating plan display to look better.
+
+- Modify the size of the seating plan by getting it from the user.
+
+- Modify the seat number display.
 
 ### <ins> Testcases </ins>
 

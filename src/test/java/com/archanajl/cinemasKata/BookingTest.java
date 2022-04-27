@@ -16,7 +16,7 @@ public class BookingTest {
     @Test
     public void checkgetSeatingPlan(){
         String actual = booking.getSeatingPlan();
-        String expected = "A0 A1 A2 A3 A4 \n -  -  -  -  - \nB0 B1 B2 B3 B4 \n -  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";
+        String expected = "A1 A2 A3 A4 A5 \n -  -  -  -  - \nB1 B2 B3 B4 B5 \n -  -  -  -  - \nC1 C2 C3 C4 C5 \n -  -  -  -  - \n";
         Assertions.assertEquals( expected,actual);
     }
 
@@ -30,7 +30,7 @@ public class BookingTest {
     @Test
     public void checkAllocatedSeats(){
         String strAllocated = booking.allocateSeats(2);
-        Assertions.assertEquals("A0,A1",strAllocated);
+        Assertions.assertEquals("A1,A2",strAllocated);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class BookingTest {
 
         String strAllocated = booking.allocateSeats(2);
         String actual = booking.getSeatingPlan();
-        String expected = "A0 A1 A2 A3 A4 \n B  B  -  -  - \nB0 B1 B2 B3 B4 \n -  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";
+        String expected = "A1 A2 A3 A4 A5 \n B  B  -  -  - \nB1 B2 B3 B4 B5 \n -  -  -  -  - \nC1 C2 C3 C4 C5 \n -  -  -  -  - \n";
         Assertions.assertEquals( expected,actual);
 
     }
@@ -54,7 +54,7 @@ public class BookingTest {
 
         String strAllocated = booking.allocateSeats(5);
         String actual = booking.getSeatingPlan();
-        String expected = "A0 A1 A2 A3 A4 \n -  -  -  -  - \nB0 B1 B2 B3 B4 \n -  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";
+        String expected = "A1 A2 A3 A4 A5 \n -  -  -  -  - \nB1 B2 B3 B4 B5 \n -  -  -  -  - \nC1 C2 C3 C4 C5 \n -  -  -  -  - \n";
         Assertions.assertEquals( expected,actual);
 
     }
@@ -65,7 +65,7 @@ public class BookingTest {
         strAllocated = booking.allocateSeats(2);
         strAllocated = booking.allocateSeats(3);
         String actual = booking.getSeatingPlan();
-        String expected = "A0 A1 A2 A3 A4 \n B  B  B  B  B \nB0 B1 B2 B3 B4 \n -  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";
+        String expected = "A1 A2 A3 A4 A5 \n B  B  B  B  B \nB1 B2 B3 B4 B5 \n -  -  -  -  - \nC1 C2 C3 C4 C5 \n -  -  -  -  - \n";
         Assertions.assertEquals( expected,actual);
 
     }
@@ -76,7 +76,7 @@ public class BookingTest {
         String strAllocated1 = booking.allocateSeats(3);
         String strAllocated2 = booking.allocateSeats(3);
         String actual = booking.getSeatingPlan();
-        String expected = "A0 A1 A2 A3 A4 \n B  B  B  B  B \nB0 B1 B2 B3 B4 \n B  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";
+        String expected = "A1 A2 A3 A4 A5 \n B  B  B  B  B \nB1 B2 B3 B4 B5 \n B  -  -  -  - \nC1 C2 C3 C4 C5 \n -  -  -  -  - \n";
         Assertions.assertEquals( expected,actual);
 
     }
@@ -90,7 +90,7 @@ public class BookingTest {
         strAllocated = booking.allocateSeats(3);
         strAllocated = booking.allocateSeats(3);
         String actual = booking.getSeatingPlan();
-        String expected = "A0 A1 A2 A3 A4 \n B  B  B  B  B \nB0 B1 B2 B3 B4 \n B  B  B  B  B \nC0 C1 C2 C3 C4 \n B  B  B  B  B \n";
+        String expected = "A1 A2 A3 A4 A5 \n B  B  B  B  B \nB1 B2 B3 B4 B5 \n B  B  B  B  B \nC1 C2 C3 C4 C5 \n B  B  B  B  B \n";
         Assertions.assertEquals( expected,actual);
 
     }
@@ -105,7 +105,7 @@ public class BookingTest {
         strAllocated = booking.allocateSeats(3);
         strAllocated = booking.allocateSeats(3);
         String actual = booking.getSeatingPlan();
-        String expected = "A0 A1 A2 A3 A4 \n B  B  B  B  B \nB0 B1 B2 B3 B4 \n B  B  B  B  B \nC0 C1 C2 C3 C4 \n B  B  B  B  B \n";
+        String expected = "A1 A2 A3 A4 A5 \n B  B  B  B  B \nB1 B2 B3 B4 B5 \n B  B  B  B  B \nC1 C2 C3 C4 C5 \n B  B  B  B  B \n";
         Assertions.assertEquals( expected,actual);
         Assertions.assertEquals("3 seat/seats not available to be booked.",strAllocated);
     }

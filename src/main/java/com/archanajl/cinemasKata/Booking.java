@@ -18,7 +18,7 @@ public class Booking {
         SeatNumber sN = new SeatNumber();
         for (int i=0; i<= seats.length -1; i++){
             for (int j=0; j<= seats[i].length -1;j++){
-                    seatingPlan.append(sN.getSeatNumber(i,j) + " " );
+                    seatingPlan.append(sN.assignSeatNumber(i,j) + " " );
             }
             seatingPlan.append(System.lineSeparator());
             for (int j=0; j<= seats[i].length-1;j++){

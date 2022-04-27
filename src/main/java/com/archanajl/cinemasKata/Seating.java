@@ -28,10 +28,6 @@ public class Seating {
         return seating;
     }
 
-    public void setSeating(int[][] seating) {
-        this.seating = seating;
-    }
-
     public String allocateSeats(int numSeats){
         int rowIndex = 0;
         int columnIndex = 0;
@@ -42,7 +38,7 @@ public class Seating {
             columnIndex = this.filledSeats % numColumn ;
             for (int i=0; i<= numSeats-1; i++){
                 this.seating[rowIndex][columnIndex] = 1;
-                seatsAllocated += sN.getSeatNumber(rowIndex,columnIndex) + ",";
+                seatsAllocated += sN.assignSeatNumber(rowIndex,columnIndex) + ",";
                 this.availableSeats--;
                 this.filledSeats++;
                 if (columnIndex == numColumn) {

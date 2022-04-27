@@ -57,4 +57,14 @@ public class BookingTest {
 
     }
 
+    @Test
+    public void checkgetSeatingPlanAfterAllocatingTwoTimes(){
+
+        String strAllocated1 = booking.allocateSeats(2);
+        String strAllocated2 = booking.allocateSeats(3);
+        String actual = booking.getSeatingPlan();
+        String expected = "A0 A1 A2 A3 A4 \n B  B  B  B  B \nB0 B1 B2 B3 B4 \n -  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";
+        Assertions.assertEquals( expected,actual);
+
+    }
 }

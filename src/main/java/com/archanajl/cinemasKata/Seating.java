@@ -38,26 +38,29 @@ public class Seating {
         String seatsAllocated ="";
         SeatNumber sN = new SeatNumber();
         if (isSeatsAvailable(numSeats)){
-            rowIndex = this.filledSeats / numRow ;
+            rowIndex = this.filledSeats / numColumn ;
             columnIndex = this.filledSeats % numColumn ;
             for (int i=0; i<= numSeats-1; i++){
                 seats[rowIndex][columnIndex] = 1;
                 seatsAllocated += sN.assignSeatNumber(rowIndex,columnIndex) + ",";
                 this.availableSeats--;
                 this.filledSeats++;
-                if (columnIndex == numColumn) {
+                if (columnIndex == numColumn-1) {
                     columnIndex= 0;
                     rowIndex++;
                 }
                 else columnIndex++;
             }
+        }else{
+            seatsAllocated = numSeats + " seat/seats not available to be booked. ";
         }
+
         setSeating(seats);
         return seatsAllocated;
     }
 
     public boolean isSeatsAvailable(int numSeats){
-        return (this.availableSeats > numSeats);
+        return (this.availableSeats >= numSeats);
     }
 
 }

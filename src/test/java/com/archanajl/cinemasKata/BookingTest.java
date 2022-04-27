@@ -46,7 +46,7 @@ public class BookingTest {
     @Test
     public void checkAllocatedSeatsMoreThanThree(){
         String strAllocated = booking.allocateSeats(5);
-        Assertions.assertEquals("Please enter valid number of seats(1,2 0r 3)",strAllocated);
+        Assertions.assertEquals("Please enter valid number of seats(1,2 0r 3).",strAllocated);
     }
 
     @Test
@@ -61,9 +61,9 @@ public class BookingTest {
 
     @Test
     public void checkgetSeatingPlanAfterAllocatingTwoTimes(){
-
-        String strAllocated1 = booking.allocateSeats(2);
-        String strAllocated2 = booking.allocateSeats(3);
+        String strAllocated ="";
+        strAllocated = booking.allocateSeats(2);
+        strAllocated = booking.allocateSeats(3);
         String actual = booking.getSeatingPlan();
         String expected = "A0 A1 A2 A3 A4 \n B  B  B  B  B \nB0 B1 B2 B3 B4 \n -  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";
         Assertions.assertEquals( expected,actual);
@@ -80,4 +80,34 @@ public class BookingTest {
         Assertions.assertEquals( expected,actual);
 
     }
+
+    @Test
+    public void checkgetSeatingPlanAfterAllocatingAllSeats(){
+        String strAllocated ="";
+        strAllocated = booking.allocateSeats(3);
+        strAllocated = booking.allocateSeats(3);
+        strAllocated = booking.allocateSeats(3);
+        strAllocated = booking.allocateSeats(3);
+        strAllocated = booking.allocateSeats(3);
+        String actual = booking.getSeatingPlan();
+        String expected = "A0 A1 A2 A3 A4 \n B  B  B  B  B \nB0 B1 B2 B3 B4 \n B  B  B  B  B \nC0 C1 C2 C3 C4 \n B  B  B  B  B \n";
+        Assertions.assertEquals( expected,actual);
+
+    }
+
+    @Test
+    public void checkallocateSeatsMoreThanAllSeats(){
+        String strAllocated ="";
+        strAllocated = booking.allocateSeats(3);
+        strAllocated = booking.allocateSeats(3);
+        strAllocated = booking.allocateSeats(3);
+        strAllocated = booking.allocateSeats(3);
+        strAllocated = booking.allocateSeats(3);
+        strAllocated = booking.allocateSeats(3);
+        String actual = booking.getSeatingPlan();
+        String expected = "A0 A1 A2 A3 A4 \n B  B  B  B  B \nB0 B1 B2 B3 B4 \n B  B  B  B  B \nC0 C1 C2 C3 C4 \n B  B  B  B  B \n";
+        Assertions.assertEquals( expected,actual);
+        Assertions.assertEquals("3 seat/seats not available to be booked.",strAllocated);
+    }
 }
+

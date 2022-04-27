@@ -43,7 +43,7 @@ public class Booking {
             }
             return AllocatedSeats;
         }else
-            return "Please enter valid number of seats(1,2 0r 3)";
+            return "Please enter valid number of seats(1,2 0r 3).";
     }
 
 }

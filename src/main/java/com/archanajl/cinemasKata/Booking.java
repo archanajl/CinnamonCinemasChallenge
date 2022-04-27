@@ -10,6 +10,7 @@ public class Booking {
         this.cinema = cinema;
         Seating seating = cinema.getSeating();
         seats = seating.getSeating();
+
     }
 
     public String getSeatingPlan(){

@@ -21,4 +21,10 @@ public class BookingTest {
         String expected = "A0 A1 A2 A3 A4 \n -  -  -  -  - \nB0 B1 B2 B3 B4 \n -  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";
         Assertions.assertEquals( expected,actual);
     }
+
+    @Test
+    public void checkisSeatsAvailable(){
+        Seating seatPlan = new Seating(3,5);
+        Assertions.assertTrue(seatPlan.isSeatsAvailable());
+    }
 }

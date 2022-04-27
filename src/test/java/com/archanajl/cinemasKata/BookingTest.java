@@ -3,9 +3,6 @@ package com.archanajl.cinemasKata;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
-
 
 public class BookingTest {
 
@@ -25,6 +22,23 @@ public class BookingTest {
     @Test
     public void checkisSeatsAvailable(){
         Seating seatPlan = new Seating(3,5);
-        Assertions.assertTrue(seatPlan.isSeatsAvailable());
+        Assertions.assertTrue(seatPlan.isSeatsAvailable(2));
     }
+
+    @Test
+    public void checkAllocatedSeats(){
+        String strAllocated = booking.allocateSeats(2);
+        Assertions.assertEquals("A0,A1",strAllocated);
+    }
+
+    @Test
+    public void checkgetSeatingPlanAfterAllocating(){
+
+        String strAllocated = booking.allocateSeats(2);
+        String actual = booking.getSeatingPlan();
+        String expected = "A0 A1 A2 A3 A4 \n B  B  -  -  - \nB0 B1 B2 B3 B4 \n -  -  -  -  - \nC0 C1 C2 C3 C4 \n -  -  -  -  - \n";
+        Assertions.assertEquals( expected,actual);
+
+    }
+
 }

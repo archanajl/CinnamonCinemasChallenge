@@ -12,10 +12,12 @@ public class Cinema {
         this.seating = new Seating(rows,seats);
     }
 
-    public Seating getSeating() {
-        return seating;
+    public int[][] getSeating() {
+        return this.seating.getSeating();
     }
 
-    
+    public String allocateSeats(int numSeats){
+        return this.seating.allocateSeats(numSeats);
+    }
 
 }

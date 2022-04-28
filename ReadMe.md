@@ -84,15 +84,17 @@ Stop allocating once all the tickets are booked. Tests written and checked to pa
   
 Display the seating plan after allocating and check whether it is done properly.
 
+- Step Eight:
+
+Method to randomly assign all the seats and display the seating plan.
+
 ### <ins> To improve </ins>
 
 - Try to include parameterized tests.
   
 - Include the console display to get the input from the user and modify the seating plan display to look better.
 
-- Modify the size of the seating plan by getting it from the user.
-
-- Modify the seat number display.
+- Customize the size of the seating plan and seat number display by getting it from the user.
 
 ### <ins> Testcases </ins>
 

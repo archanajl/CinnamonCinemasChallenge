@@ -52,7 +52,7 @@ public class Seating {
                 else columnIndex++;
             }
         }else{
-            seatsAllocated = numSeats + " seat/seats not available to be booked. ";
+            seatsAllocated = "Not Enough.";
         }
 
         setSeating(seats);

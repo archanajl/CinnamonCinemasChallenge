@@ -34,16 +34,29 @@ public class Booking {
 
     }
 
-    public String allocateSeats(int numSeats){
+    public String allocateSeats(int numSeats) {
 
         if (numSeats <= 3) {
             String AllocatedSeats = cinema.allocateSeats(numSeats);
             if (AllocatedSeats != "") {
-                AllocatedSeats = AllocatedSeats.substring(0, AllocatedSeats.length() - 1);
+                if (AllocatedSeats == "Not Enough.") return "Sorry! Not enough seats available for " + numSeats + ".";
+                else{
+                    AllocatedSeats = AllocatedSeats.substring(0, AllocatedSeats.length() - 1);
+                    return AllocatedSeats;
+                }
             }
-            return AllocatedSeats;
-        }else
-            return "Please enter valid number of seats(1,2 0r 3).";
+        }
+        return "Please enter valid number of seats(1,2 0r 3).";
     }
 
+    public String allocateAllSeatsRandom(){
+        String AllocatedSeats ="";
+        int randomNumSeats;
+        while(AllocatedSeats != "Not Enough."){
+            randomNumSeats = 1 + (int)(Math.random()*3);
+            AllocatedSeats = cinema.allocateSeats(randomNumSeats);
+        }
+        return getSeatingPlan();
+    }
 }
+

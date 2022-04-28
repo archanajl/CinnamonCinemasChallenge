@@ -88,10 +88,12 @@ Display the seating plan after allocating and check whether it is done properly.
 
 Method to randomly assign all the seats and display the seating plan.
 
-### <ins> To improve </ins>
+- Step Nine:
 
-- Try to include parameterized tests.
-  
+Included parameterized tests to check the methods.
+
+### <ins> To improve </ins>
+ 
 - Include the console display to get the input from the user and modify the seating plan display to look better.
 
 - Customize the size of the seating plan and seat number display by getting it from the user.

@@ -20,6 +20,7 @@ public class Booking {
             for (int j=0; j<= seats[i].length -1;j++){
                     seatingPlan.append(sN.assignSeatNumber(i,j) + " " );
             }
+            seatingPlan.deleteCharAt(seatingPlan.length()-1);
             seatingPlan.append(System.lineSeparator());
             for (int j=0; j<= seats[i].length-1;j++){
                 if (seats[i][j] != 0){
@@ -28,6 +29,7 @@ public class Booking {
                     seatingPlan.append(" - " );
                 }
             }
+            seatingPlan.deleteCharAt(seatingPlan.length()-1);
             seatingPlan.append(System.lineSeparator());
         }
         return seatingPlan.toString();

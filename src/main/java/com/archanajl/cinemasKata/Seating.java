@@ -63,4 +63,7 @@ public class Seating {
         return (this.availableSeats >= numSeats);
     }
 
+    public int getAvailableSeats() {
+        return availableSeats;
+    }
 }

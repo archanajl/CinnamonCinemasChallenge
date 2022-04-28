@@ -52,7 +52,7 @@ public class Booking {
     public String allocateAllSeatsRandom(){
         String AllocatedSeats ="";
         int randomNumSeats;
-        while(AllocatedSeats != "Not Enough."){
+        while(cinema.getAvailableSeats() != 0){
             randomNumSeats = 1 + (int)(Math.random()*3);
             AllocatedSeats = cinema.allocateSeats(randomNumSeats);
         }

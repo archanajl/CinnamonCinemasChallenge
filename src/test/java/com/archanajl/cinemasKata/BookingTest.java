@@ -114,7 +114,6 @@ public class BookingTest {
     public void checkallocateAllSeatsRandom(){
         String actual = booking.allocateAllSeatsRandom();
         String expected = "A1 A2 A3 A4 A5 \n B  B  B  B  B \nB1 B2 B3 B4 B5 \n B  B  B  B  B \nC1 C2 C3 C4 C5 \n B  B  B  B  B \n";
-
         Assertions.assertEquals( expected,actual);
     }
 }

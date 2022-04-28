@@ -22,4 +22,7 @@ public class Cinema {
         return seating.allocateSeats(numSeats, getSeating());
     }
 
+    public int getAvailableSeats(){
+        return seating.getAvailableSeats();
+    }
 }

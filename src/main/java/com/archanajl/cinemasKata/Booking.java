@@ -15,10 +15,10 @@ public class Booking {
     public String getSeatingPlan(){
 
         StringBuilder seatingPlan = new StringBuilder();
-        SeatNumber sN = new SeatNumber();
+        SeatNumber seatNumber = new SeatNumber();
         for (int i=0; i<= seats.length -1; i++){
             for (int j=0; j<= seats[i].length -1;j++){
-                    seatingPlan.append(sN.assignSeatNumber(i,j) + " " );
+                    seatingPlan.append(seatNumber.generateSeatNumber(i,j) + " " );
             }
             seatingPlan.deleteCharAt(seatingPlan.length()-1);
             seatingPlan.append(System.lineSeparator());

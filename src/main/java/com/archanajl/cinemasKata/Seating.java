@@ -36,13 +36,13 @@ public class Seating {
         int rowIndex = 0;
         int columnIndex = 0;
         String seatsAllocated ="";
-        SeatNumber sN = new SeatNumber();
+        SeatNumber seatNumber = new SeatNumber();
         if (isSeatsAvailable(numSeats)){
             rowIndex = this.filledSeats / numColumn ;
             columnIndex = this.filledSeats % numColumn ;
             for (int i=0; i<= numSeats-1; i++){
                 seats[rowIndex][columnIndex] = 1;
-                seatsAllocated += sN.assignSeatNumber(rowIndex,columnIndex) + ",";
+                seatsAllocated += seatNumber.generateSeatNumber(rowIndex,columnIndex) + ",";
                 this.availableSeats--;
                 this.filledSeats++;
                 if (columnIndex == numColumn-1) {

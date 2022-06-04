@@ -98,6 +98,8 @@ Included parameterized tests to check the methods.
 
 - Customize the size of the seating plan and seat number display by getting it from the user.
 
+- Add tests for all the methods so that it can be tested individually before integrating
+
 ### <ins> Testcases </ins>
 
 Please click [here](https://htmlpreview.github.io/?https://github.com/archanajl/CinnamonCinemasChallenge/blob/master/docs/Test%20Results%20-%20BookingTest.html) to see the test results.
